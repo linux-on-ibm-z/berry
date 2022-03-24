@@ -101,6 +101,7 @@ build() {
   # Options are documented at https://github.com/emscripten-core/emscripten/blob/86131037aa4f1c7bf6021081dd28fae12bdedba1/src/settings.js
   emcc \
     -o ./build.js \
+    -s SUPPORT_BIG_ENDIAN=1 \
     -s WASM=1 \
     -s EXPORTED_FUNCTIONS="$(cat ./exported.json)" \
     -s EXPORTED_RUNTIME_METHODS='["cwrap", "getValue"]' \
